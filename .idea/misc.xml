@@ -6,7 +6,10 @@
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/layout/activity_main.xml" value="0.29347826086956524" />
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/layout/activity_map_container.xml" value="0.2028985507246377" />
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/menu/indexMenu.xml" value="0.22" />
+        <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/menu/index_menu.xml" value="0.359375" />
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/menu/move.xml" value="0.359375" />
+        <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.37552083333333336" />
+        <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.37552083333333336" />
       </map>
     </option>
   </component>
@@ -15,5 +18,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.29347826086956524" />
+      </ProjectState>
+    </option>
   </component>
 </project>

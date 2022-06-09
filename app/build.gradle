@@ -4,7 +4,8 @@ plugins {
 
 android {
     compileSdk 32
-
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
     defaultConfig {
         applicationId "com.wfx.jasmine_trail"
         minSdk 21
@@ -28,7 +29,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'pub.devrel:easypermissions:1.1.0'
     implementation 'com.tencent.map:tencent-map-vector-sdk:4.3.1'
     implementation 'com.tencent.map:track:2.0.1'
     implementation 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.2.6'
