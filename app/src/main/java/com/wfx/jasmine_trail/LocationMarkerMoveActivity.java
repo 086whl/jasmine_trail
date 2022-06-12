@@ -50,7 +50,7 @@ public class LocationMarkerMoveActivity extends AbsMapActivity implements EasyPe
     private OnLocationChangedListener locationChangedListener;
     private SensorEventHelper mSensorHelper;
     private Marker marker;
-
+    private String username;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState, TencentMap pTencentMap) {
         super.onCreate(savedInstanceState, pTencentMap);
@@ -160,11 +160,13 @@ public class LocationMarkerMoveActivity extends AbsMapActivity implements EasyPe
             Double latitude = latLng.getLatitude();
             Double longitude = latLng.getLongitude();
             String addInfo=latitude.toString()+","+longitude.toString();
+            Intent intent=getIntent();
+            username = intent.getStringExtra("usernameLocal");
             new Thread(){
                 public void run(){
                     try{
                         //向服务器端添加轨迹记录
-                        new ConnectWeb().addInfo(addInfo);
+                        new ConnectWeb().addInfo(username,addInfo);
                     }catch (Exception e){
                         e.printStackTrace();
                     }finally {
@@ -264,6 +266,7 @@ public class LocationMarkerMoveActivity extends AbsMapActivity implements EasyPe
                 locationManager.removeUpdates(this);
                 Intent intent=new Intent();
                 intent.setClass(LocationMarkerMoveActivity.this, MainActivity.class);
+                intent.putExtra("username",username.trim() );
                 startActivity(intent);
                 break;
         }

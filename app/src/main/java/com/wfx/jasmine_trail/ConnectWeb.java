@@ -15,6 +15,7 @@ import java.util.List;
 
 public class ConnectWeb {
     public static String path="http://124.222.188.244/jasmine_trail_server";
+//    public static String path="http://192.168.0.102:8088/jasmine_trail_server";
     //访问数据库获取数据
     private String connWebByGet(String url){
 
@@ -30,8 +31,6 @@ public class ConnectWeb {
             conn = (HttpURLConnection) obUrl.openConnection();
             //允许输入流，即允许下载
             conn.setDoInput(true);
-//            //允许输出流，即允许上传
-//            conn.setDoOutput(true);
             //不使用缓冲
             conn.setUseCaches(false);
             //使用get请求
@@ -112,56 +111,34 @@ public class ConnectWeb {
         return resultData;
     }
 
-    public String getInfo(){
-        String url = path + "/trailInfo/getInfo";
+    public String getInfo(String username){
+        String url = path + "/trailInfo/getInfo/"+username;
         String str = connWebByGet(url);
         return str;
     }
 
-    public String addInfo(String trailInfo){
-        String url = path + "/trailInfo/addInfo/"+trailInfo;
+    public String login(String username,String password){
+        String url = path + "/trailInfo/login/"+username+"/"+password;
         String str = connWebByPost(url);
         return str;
     }
 
-    public String clearAll(){
-        String url = path + "/trailInfo/clearAll";
+    public String register(String username,String password){
+        String url = path + "/trailInfo/register/"+username+"/"+password;
         String str = connWebByPost(url);
         return str;
     }
 
-//    //获取用户订单
-//    public List<BillEntity> getBillList(String uid){
-//        List<BillEntity> mylist = new ArrayList<BillEntity>();
-//        String url = path + "billAction.action?type=list&uid="+uid;
-//        String str=connWeb(url);
-//        System.out.println("str:"+str);
-//        try{
-//            JSONObject job = new JSONObject(str);
-//            JSONArray jay = job.getJSONArray("blist");
-//            for (int i=0;i<jay.length();i+=1){
-//                JSONObject temp = (JSONObject) jay.get(i);
-//                BillEntity be = new BillEntity();
-//                be.setId(temp.getInt("id"));
-//                be.setState(temp.getString("state"));
-//                be.setBtime(temp.getString("btime"));
-//                be.setBtype(temp.getString("btype"));
-//                be.setCtime(temp.getString("ctime"));
-//                List<GoodsListEntity> glist = new ArrayList<GoodsListEntity>();
-//                JSONArray gl = temp.getJSONArray("glist");
-//                for(int j=0;j<gl.length();j+=1){
-//                    GoodsListEntity ge = new GoodsListEntity();
-//                    JSONObject gtemp = (JSONObject) gl.get(j);
-//                    ge.setGname(gtemp.getString("gname"));
-//                    ge.setGnum(gtemp.getInt("gnum"));
-//                    glist.add(ge);
-//                }
-//                be.setGlist(glist);
-//                mylist.add(be);
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        return mylist;
-//    }
+    public String addInfo(String username,String trailInfo){
+        String url = path + "/trailInfo/addInfo/"+username+"/"+trailInfo;
+        String str = connWebByPost(url);
+        return str;
+    }
+
+    public String clearAll(String username){
+        String url = path + "/trailInfo/clearAll/"+username;
+        String str = connWebByPost(url);
+        return str;
+    }
+
 }

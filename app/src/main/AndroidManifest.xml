@@ -38,8 +38,9 @@
             android:value="DR6BZ-P5HCS-ZMHOZ-6Q4FM-RKV7V-OZFZZ" />
         <activity android:name=".MoveActivity"></activity>
         <activity android:name=".LocationMarkerMoveActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

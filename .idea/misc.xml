@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/layout/activity_main.xml" value="0.29347826086956524" />
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/layout/activity_map_container.xml" value="0.2028985507246377" />
         <entry key="..\:/Project/StudioProjects/0606/jasmine_trail/app/src/main/res/menu/indexMenu.xml" value="0.22" />
@@ -22,7 +23,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.29347826086956524" />
+        <option name="scale" value="0.3333333333333333" />
       </ProjectState>
     </option>
   </component>

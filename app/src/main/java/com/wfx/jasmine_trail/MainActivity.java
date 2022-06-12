@@ -22,18 +22,26 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private TextView name;
     private Context context;
+    private String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button buttonStart=findViewById(R.id.start);
         Button buttonClearAll=findViewById(R.id.clearAll);
+
+        Intent intent=getIntent();
+        username = intent.getStringExtra("username");
+        TextView currentUsername = findViewById(R.id.current_username);
+        currentUsername.setText("欢迎！"+username);
+
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent();
                 Toast.makeText(MainActivity.this,"开始记录轨迹！",Toast.LENGTH_SHORT).show();
                 intent.setClass(MainActivity.this, LocationMarkerMoveActivity.class);
+                intent.putExtra("usernameLocal",username.trim() );
                 startActivity(intent);
 
             }
@@ -45,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run(){
                         try{
                             //向服务器端添加轨迹记录
-                            new ConnectWeb().clearAll();
+                            new ConnectWeb().clearAll(username.trim());
                         }catch (Exception e){
                             e.printStackTrace();
                         }finally {
@@ -80,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_list:
                 intent.setClass(MainActivity.this, MoveActivity.class);
+                intent.putExtra("usernameMove",username.trim() );
                 startActivity(intent);
                 break;
             case R.id.menu_my:
