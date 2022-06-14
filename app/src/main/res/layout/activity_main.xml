@@ -7,50 +7,68 @@
     android:background="@mipmap/bg"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/name"
+    <!-- 模拟时钟控件 -->
+
+
+    <AnalogClock
+        android:id="@+id/analogClock1"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextClock
+        android:id="@+id/textClock4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trail"
-        android:textColor="#C3009688"
-        android:textSize="100dp"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="67dp"
+        android:format24Hour="HH:mm"
+        android:textColor="#CCFFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/analogClock1" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="开始"
+        android:layout_marginBottom="33dp"
+        android:text="开始记录"
+        app:layout_constraintBottom_toTopOf="@+id/clearAll"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/textClock4" />
 
     <Button
         android:id="@+id/clearAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="145dp"
         android:text="清除记录"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/current_username"
+        app:layout_constraintStart_toStartOf="@+id/start"
         app:layout_constraintTop_toBottomOf="@+id/start" />
 
     <TextView
         android:id="@+id/current_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="欢迎"
-        app:layout_constraintStart_toStartOf="@+id/name"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#C3009688"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -141,4 +141,16 @@ public class ConnectWeb {
         return str;
     }
 
+    public String updateUsername(String oldUsername,String newUsername){
+        String url = path + "/trailInfo/updateUsername/"+oldUsername+"/"+newUsername;
+        String str = connWebByPost(url);
+        return str;
+    }
+
+    public String updatePassword(String username,String oldPassword,String newPassword){
+        String url = path + "/trailInfo/updatePassword/"+username+"/"+oldPassword+"/"+newPassword;
+        String str = connWebByPost(url);
+        return str;
+    }
+
 }

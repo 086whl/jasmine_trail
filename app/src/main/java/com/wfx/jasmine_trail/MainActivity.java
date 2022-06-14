@@ -83,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent=new Intent();
         switch (item.getItemId()) {
-            case R.id.menu_home:
-
+            case R.id.menu_out:
+                intent.setClass(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.menu_list:
                 intent.setClass(MainActivity.this, MoveActivity.class);
@@ -92,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.menu_my:
-
+                intent.setClass(MainActivity.this, MyActivity.class);
+                intent.putExtra("usernameMy",username.trim() );
+                startActivity(intent);
                 break;
         }
 

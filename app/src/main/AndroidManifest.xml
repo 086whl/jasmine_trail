@@ -39,6 +39,7 @@
         <activity android:name=".MoveActivity"></activity>
         <activity android:name=".LocationMarkerMoveActivity"></activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MyActivity"></activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
