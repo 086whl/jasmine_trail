@@ -91,7 +91,7 @@ public class MoveActivity extends AbsMapActivity {
                     mCarMarker = mMap.addMarker(
                             new MarkerOptions(carLatLng)
                                     .anchor(0.5f, 0.5f)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.taxi))
+                                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.tb))
                                     .flat(true)
                                     .clockwise(false));
 

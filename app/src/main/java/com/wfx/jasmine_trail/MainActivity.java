@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 new Thread(){
                     public void run(){
                         try{
-                            //向服务器端添加轨迹记录
+                            //向服务器端发送清除全部轨迹记录
                             new ConnectWeb().clearAll(username.trim());
                         }catch (Exception e){
                             e.printStackTrace();
